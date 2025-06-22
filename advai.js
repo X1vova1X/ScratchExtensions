@@ -30,7 +30,7 @@ Scratch.fetch('https://mubilop.tech/proxy')
 
 const vm = Scratch.vm;
 
-class PenguinGPT {
+class AdvancedAI {
     constructor() { // thank u Ashime for helping me here!!!
         this.chatHistories = {};
         this.model = "gpt-4o";
@@ -1194,5 +1194,5 @@ class PenguinGPT {
          }
 
     }
-    Scratch.extensions.register(new PenguinGPT());
+    Scratch.extensions.register(new AdvancedAI());
 })(Scratch);
