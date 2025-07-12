@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleInputs Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<p>The documentation pages are in beta, and may have bugs.</p>
+<h1>SimpleInputs Documentation</h1>
+
+<p><strong>SimpleInputs</strong> is a Scratch extension that lets you create, customize, and control text input areas ("typing areas") for your Scratch projects. This extension is ideal for making quizzes, chatbots, forms, and interactive stories that need user text input.</p>
+
+<h2>Blocks</h2>
+
+<h3>Hat Blocks (Events)</h3>
+<table>
+    <tr>
+        <th>Block</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>when [ID] has been submitted</code></td>
+        <td>Triggers when Enter is pressed in the input area.</td>
+    </tr>
+    <tr>
+        <td><code>when [ID] focused</code></td>
+        <td>Triggers when the area gains focus.</td>
+    </tr>
+    <tr>
+        <td><code>when [ID] unfocused</code></td>
+        <td>Triggers when the area loses focus.</td>
+    </tr>
+</table>
+
+<h3>Boolean Blocks</h3>
+<table>
+    <tr>
+        <th>Block</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>true</code></td>
+        <td>Always returns true (for logic building).</td>
+    </tr>
+    <tr>
+        <td><code>false</code></td>
+        <td>Always returns false.</td>
+    </tr>
+    <tr>
+        <td><code>typing area [ID] is focused?</code></td>
+        <td>Returns true if area is currently focused.</td>
+    </tr>
+    <tr>
+        <td><code>typing area [ID] exists?</code></td>
+        <td>Returns true if area is created.</td>
+    </tr>
+</table>
+
+<h3>Command Blocks</h3>
+<table>
+    <tr>
+        <th>Block</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>create typing area [ID]</code></td>
+        <td>Adds a new text input area to the stage.</td>
+    </tr>
+    <tr>
+        <td><code>delete typing area [ID]</code></td>
+        <td>Removes the input area.</td>
+    </tr>
+    <tr>
+        <td><code>scale typing area [ID] to [W] x [H] pixels</code></td>
+        <td>Resize area to width W and height H.</td>
+    </tr>
+    <tr>
+        <td><code>move typing area [ID] to stage X: [X] Y: [Y]</code></td>
+        <td>Reposition area on stage (center = 0,0).</td>
+    </tr>
+    <tr>
+        <td><code>set [PARAM] of typing area [ID] to [VALUE]</code></td>
+        <td>Set a property of the area (see <a href="#menus">Menus</a>).</td>
+    </tr>
+    <tr>
+        <td><code>show typing area [ID]</code></td>
+        <td>Show (un-hide) the area.</td>
+    </tr>
+    <tr>
+        <td><code>hide typing area [ID]</code></td>
+        <td>Hide the area.</td>
+    </tr>
+    <tr>
+        <td><code>set value of typing area [ID] to [VALUE]</code></td>
+        <td>Set the area's text.</td>
+    </tr>
+    <tr>
+        <td><code>set placeholder of typing area [ID] to [VALUE]</code></td>
+        <td>Set the placeholder (grayed-out hint) text.</td>
+    </tr>
+    <tr>
+        <td><code>focus typing area [ID]</code></td>
+        <td>Focus (activate for typing).</td>
+    </tr>
+    <tr>
+        <td><code>unfocus typing area [ID]</code></td>
+        <td>Remove focus.</td>
+    </tr>
+    <tr>
+        <td><code>select all text in typing area [ID]</code></td>
+        <td>Select all text inside.</td>
+    </tr>
+    <tr>
+        <td><code>unselect all text in typing area [ID]</code></td>
+        <td>Remove text selection.</td>
+    </tr>
+    <tr>
+        <td><code>select [WHICH] word(s) in [ID] that [COMPARE] [VALUE]</code></td>
+        <td>Select a word in the area by value (see <a href="#menus">Menus</a>).</td>
+    </tr>
+    <tr>
+        <td><code>unselect [WHICH] word(s) in [ID] that [COMPARE] [VALUE]</code></td>
+        <td>Remove selection of a specific word.</td>
+    </tr>
+    <tr>
+        <td><code>select word at cursor position in typing area [ID]</code></td>
+        <td>Select the word at the current cursor position.</td>
+    </tr>
+</table>
+
+<h3>Reporter Blocks</h3>
+<table>
+    <tr>
+        <th>Block</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>value of typing area [ID]</code></td>
+        <td>Get the current text in the area.</td>
+    </tr>
+    <tr>
+        <td><code>length of typing area [ID]</code></td>
+        <td>Get the number of characters.</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Menus</h2>
+
+<h3>Parameter Menu (for <code>set [PARAM] of typing area [ID] to [VALUE]</code>)</h3>
+<table>
+    <tr>
+        <th>Menu Value</th>
+        <th>Description</th>
+        <th>Example Value</th>
+    </tr>
+    <tr>
+        <td>multiple lines</td>
+        <td>Allow multiple lines?</td>
+        <td>true / false</td>
+    </tr>
+    <tr>
+        <td>css styles</td>
+        <td>Extra CSS styles</td>
+        <td><code>color: blue;</code></td>
+    </tr>
+    <tr>
+        <td>max characters</td>
+        <td>Limit text length</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>read only</td>
+        <td>Make uneditable</td>
+        <td>true / false</td>
+    </tr>
+    <tr>
+        <td>disabled</td>
+        <td>Make unclickable</td>
+        <td>true / false</td>
+    </tr>
+    <tr>
+        <td>font size</td>
+        <td>Size of text</td>
+        <td><code>20px</code></td>
+    </tr>
+    <tr>
+        <td>text color</td>
+        <td>Color of text</td>
+        <td><code>red</code> or <code>#ff0000</code></td>
+    </tr>
+    <tr>
+        <td>background color</td>
+        <td>Background color</td>
+        <td><code>yellow</code></td>
+    </tr>
+    <tr>
+        <td>border radius</td>
+        <td>Rounded corners</td>
+        <td><code>10px</code></td>
+    </tr>
+    <tr>
+        <td>border color</td>
+        <td>Border color</td>
+        <td><code>#333</code></td>
+    </tr>
+    <tr>
+        <td>align</td>
+        <td>Text alignment</td>
+        <td><code>left</code>, <code>center</code>, <code>right</code></td>
+    </tr>
+    <tr>
+        <td>unfocus on submit</td>
+        <td>Blur input after Enter</td>
+        <td>true / false</td>
+    </tr>
+</table>
+
+<h3>Word Menu</h3>
+<ul>
+    <li><code>first word</code></li>
+    <li><code>last word</code></li>
+</ul>
+
+<h3>Comparing Menu</h3>
+<ul>
+    <li><code>contains</code></li>
+    <li><code>equals to</code></li>
+</ul>
+
+</body>
+</html>
